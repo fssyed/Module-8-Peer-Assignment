@@ -36,15 +36,12 @@ training2 = training[,c(population,160)]
 na.data = is.na(training2)
 NAcols=which(colSums(na.data) > 19000)
 training2 = training2[,-NAcols]
+
+barplot(table(training2$classe), ylab="Frequency", xlab=deparse(training2$classe), 
+        main="Frequency of Classe - Training")
 ```
 
-A distribution of the classe variable in the training set - majority of movements seem to be performed correctly :)
-
-``` r
-barplot(table(training2$classe), ylab="Frequency", xlab=deparse(training2$classe), main="Frequency of Classe - Training")
-```
-
-![](8_PML_Markdown_files/figure-markdown_github/unnamed-chunk-4-1.png)
+![](8_PML_Markdown_files/figure-markdown_github/unnamed-chunk-3-1.png) A distribution of the classe variable in the training set - majority of movements seem to be performed correctly :)
 
 We are left with a data set which now has 53 indpendent variables which can be used to determine the exercise class. We now test the variables for the variances amongst them.
 
