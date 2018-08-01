@@ -73,8 +73,9 @@ randForest = randomForest(classe~., data=training3, ntree=500)
 
 ## Applying the Model to the partitioned Testing data and checking for out of sample accuracy
 
-```{r}
+```{r echo=TRUE}
 prediction.test = predict(randForest, newdata=testing)
+
 confusionMatrix(prediction.test, testing$classe)
 ```
 
